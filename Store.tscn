@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwyh4h8knfljn"]
+[gd_scene load_steps=11 format=3 uid="uid://vqwwdnicwacy"]
 
 [ext_resource type="Script" path="res://Store.gd" id="1_pjmtu"]
-[ext_resource type="Texture2D" uid="uid://b0kxpie225h7x" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_wrqbl"]
-[ext_resource type="Texture2D" uid="uid://dk5ao17la2b85" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic tools and meterials.png" id="3_frnbt"]
-[ext_resource type="Texture2D" uid="uid://b342gsy3ik3ju" path="res://Sprout Lands - Sprites - Basic pack/Objects/Wood Bridge.png" id="4_2wkw0"]
-[ext_resource type="Texture2D" uid="uid://dki8pkx5178gw" path="res://Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="5_4xn86"]
-[ext_resource type="Texture2D" uid="uid://ctuqw7wmde4gh" path="res://Sprout Lands - Sprites - Basic pack/Objects/Simple Milk and grass item.png" id="6_1x8j6"]
-[ext_resource type="Texture2D" uid="uid://dwf4y0ctvd75i" path="res://Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png" id="7_sfdm4"]
-[ext_resource type="Texture2D" uid="uid://crta42nmygtxl" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="8_sujwp"]
+[ext_resource type="Texture2D" uid="uid://d0fn480rmtydi" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_wrqbl"]
+[ext_resource type="Script" path="res://StoreButton.gd" id="3_7r3u0"]
+[ext_resource type="Texture2D" uid="uid://dwinsyic5jryy" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic tools and meterials.png" id="3_frnbt"]
+[ext_resource type="Texture2D" uid="uid://b5xsf7q4nvkmr" path="res://Sprout Lands - Sprites - Basic pack/Objects/Wood Bridge.png" id="4_2wkw0"]
+[ext_resource type="Texture2D" uid="uid://bl5vgdmu2lwmk" path="res://Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="5_4xn86"]
+[ext_resource type="Texture2D" uid="uid://clv7iktjg7rry" path="res://Sprout Lands - Sprites - Basic pack/Objects/Simple Milk and grass item.png" id="6_1x8j6"]
+[ext_resource type="Texture2D" uid="uid://jpb5xgl2pyqj" path="res://Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png" id="7_sfdm4"]
+[ext_resource type="Texture2D" uid="uid://blkmnj8jrjsru" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="8_sujwp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qdjwu"]
 
@@ -26,19 +27,12 @@ offset_left = 974.0
 offset_top = 13.0
 offset_right = 1038.0
 offset_bottom = 36.0
-text = "Coins: "
-
-[node name="CoinCount" type="Label" parent="."]
-offset_left = 1030.0
-offset_top = 13.0
-offset_right = 1071.0
-offset_bottom = 40.0
-text = "50"
+text = "Test
+"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_direction = 2
-anchors_preset = -1
 offset_left = 203.0
 offset_top = 92.0
 offset_right = 912.0
@@ -55,10 +49,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("2_wrqbl")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer"]
 layout_mode = 2
 text = "Extra Lives - 20©"
-metadata/value = 5
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer2" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -70,9 +64,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("3_frnbt")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer2"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer2"]
 layout_mode = 2
-text = "2X Damage - 20©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer3" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -83,9 +78,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("4_2wkw0")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer3"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer3"]
 layout_mode = 2
-text = "Health Potion - 5©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer4" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -96,9 +92,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("5_4xn86")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer4"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer4"]
 layout_mode = 2
-text = "Fairy Dust -10©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer5" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -109,9 +106,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("2_wrqbl")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer5"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer5"]
 layout_mode = 2
-text = "Titan Armor - 15©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer6" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -123,9 +121,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("6_1x8j6")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer6"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer6"]
 layout_mode = 2
-text = "Arrows - 2©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer7" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -136,9 +135,10 @@ split_offset = 50
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_qdjwu")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer7"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer7"]
 layout_mode = 2
-text = "Cursed Rock - 50©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer8" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -150,9 +150,10 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("7_sfdm4")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer8"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer8"]
 layout_mode = 2
-text = "Antique Necklace - 30©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [node name="VSplitContainer9" type="VSplitContainer" parent="GridContainer"]
 layout_mode = 2
@@ -163,8 +164,20 @@ split_offset = 50
 layout_mode = 2
 texture = ExtResource("8_sujwp")
 
-[node name="Button" type="Button" parent="GridContainer/VSplitContainer9"]
+[node name="StoreButton" type="Button" parent="GridContainer/VSplitContainer9"]
 layout_mode = 2
-text = "Power Glove - 50©"
+text = "Extra Lives - 20©"
+script = ExtResource("3_7r3u0")
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="ready" from="CoinsLabel" to="." method="_on_coins_label_ready"]
+[connection signal="pressed" from="GridContainer/VSplitContainer/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="ready" from="GridContainer/VSplitContainer/StoreButton" to="." method="_on_store_button_ready"]
+[connection signal="pressed" from="GridContainer/VSplitContainer2/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer3/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer4/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer5/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer6/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer7/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer8/StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="GridContainer/VSplitContainer9/StoreButton" to="." method="_on_store_button_pressed"]
