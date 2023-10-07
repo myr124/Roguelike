@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://btr6su3ioml2n"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_6jjq1"]
+[ext_resource type="Texture2D" uid="uid://dnl8ghsc8q221" path="res://Sprout Lands - Sprites - Basic pack 2/Characters/Basic Charakter Spritesheet.png" id="2_eax45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f043"]
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddu08"]
+atlas = ExtResource("2_eax45")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpeum"]
+atlas = ExtResource("2_eax45")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce66n"]
+atlas = ExtResource("2_eax45")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n04wy"]
+atlas = ExtResource("2_eax45")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84mtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f043")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddu08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpeum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce66n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n04wy")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5pav"]
+size = Vector2(39, 52)
+
+[node name="Player" type="Node2D"]
+position = Vector2(527, 326)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6jjq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(2.83333, 3.25)
+sprite_frames = SubResource("SpriteFrames_84mtl")
+animation = &"Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_s5pav")

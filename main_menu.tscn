@@ -6,16 +6,16 @@
 script = ExtResource("1_ge8q3")
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 323.0
+offset_left = 406.0
 offset_top = 198.0
-offset_right = 628.0
+offset_right = 711.0
 offset_bottom = 338.0
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 317.0
+offset_left = 406.0
 offset_top = 391.0
-offset_right = 622.0
+offset_right = 711.0
 offset_bottom = 531.0
 text = "Quit"
 
