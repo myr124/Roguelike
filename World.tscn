@@ -1,8 +1,7 @@
-[gd_scene format=3 uid="uid://ckyiybv0ilbvy"]
+[gd_scene load_steps=2 format=3 uid="uid://ckyiybv0ilbvy"]
 
-[node name="Label" type="Label"]
-offset_left = 170.0
-offset_top = 90.0
-offset_right = 651.0
-offset_bottom = 305.0
-text = "TEST TEXT"
+[ext_resource type="PackedScene" uid="uid://0vh3othvxrnw" path="res://Player.tscn" id="1_76dj5"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_76dj5")]
