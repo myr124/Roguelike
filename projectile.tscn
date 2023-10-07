@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://kpawpu382jyk"]
+
+[ext_resource type="Script" path="res://projectile.gd" id="1_5lgfl"]
+[ext_resource type="Texture2D" uid="uid://d0fn480rmtydi" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_8fi0m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hccho"]
+radius = 8.0
+
+[node name="projectile" type="Node2D"]
+position = Vector2(0, -1)
+script = ExtResource("1_5lgfl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_hccho")
+
+[node name="EggItem" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_8fi0m")
