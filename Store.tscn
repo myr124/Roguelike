@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07erevpxcj4r"]
+
+[ext_resource type="Script" path="res://Store.gd" id="1_pjmtu"]
+
+[node name="Store" type="Node2D"]
+script = ExtResource("1_pjmtu")
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 197.0
+offset_top = 75.0
+offset_right = 927.0
+offset_bottom = 590.0
+item_count = 10
+item_0/text = "Extra Lives"
+item_1/text = "2X Damage"
+item_2/text = "Health Potion"
+item_3/text = "Fairy Dust"
+item_4/text = ""
+item_5/text = "Titan Armor"
+item_6/text = "Arrows"
+item_7/text = "Cursed Rock"
+item_8/text = "Antique Necklace"
+item_9/text = "Power Glove"
+
+[node name="BackButton" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 90.0
+offset_bottom = 52.0
+text = "Back"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

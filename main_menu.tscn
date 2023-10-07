@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://vw72ewhpoefa"]
+[gd_scene load_steps=4 format=3 uid="uid://vw72ewhpoefa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ge8q3"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_pamwh"]
+
+[sub_resource type="GDScript" id="GDScript_jtr61"]
+script/source = "extends Button
+
+
+"
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ge8q3")
@@ -19,7 +27,18 @@ offset_right = 622.0
 offset_bottom = 531.0
 text = "Quit"
 
+[node name="StoreButton" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 15.0
+offset_right = 94.0
+offset_bottom = 48.0
+text = "Store"
+icon = SubResource("ImageTexture_pamwh")
+icon_alignment = 1
+script = SubResource("GDScript_jtr61")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="QuitButton" method="_on_pressed"]
+[connection signal="pressed" from="StoreButton" to="." method="_on_store_button_pressed"]
