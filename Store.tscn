@@ -1,26 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c07erevpxcj4r"]
+[gd_scene load_steps=10 format=3 uid="uid://bwyh4h8knfljn"]
 
 [ext_resource type="Script" path="res://Store.gd" id="1_pjmtu"]
+[ext_resource type="Texture2D" uid="uid://b0kxpie225h7x" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_wrqbl"]
+[ext_resource type="Texture2D" uid="uid://dk5ao17la2b85" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic tools and meterials.png" id="3_frnbt"]
+[ext_resource type="Texture2D" uid="uid://b342gsy3ik3ju" path="res://Sprout Lands - Sprites - Basic pack/Objects/Wood Bridge.png" id="4_2wkw0"]
+[ext_resource type="Texture2D" uid="uid://dki8pkx5178gw" path="res://Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="5_4xn86"]
+[ext_resource type="Texture2D" uid="uid://ctuqw7wmde4gh" path="res://Sprout Lands - Sprites - Basic pack/Objects/Simple Milk and grass item.png" id="6_1x8j6"]
+[ext_resource type="Texture2D" uid="uid://dwf4y0ctvd75i" path="res://Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png" id="7_sfdm4"]
+[ext_resource type="Texture2D" uid="uid://crta42nmygtxl" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic Plants.png" id="8_sujwp"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qdjwu"]
 
 [node name="Store" type="Node2D"]
 script = ExtResource("1_pjmtu")
-
-[node name="ItemList" type="ItemList" parent="."]
-offset_left = 197.0
-offset_top = 75.0
-offset_right = 927.0
-offset_bottom = 590.0
-item_count = 10
-item_0/text = "Extra Lives"
-item_1/text = "2X Damage"
-item_2/text = "Health Potion"
-item_3/text = "Fairy Dust"
-item_4/text = ""
-item_5/text = "Titan Armor"
-item_6/text = "Arrows"
-item_7/text = "Cursed Rock"
-item_8/text = "Antique Necklace"
-item_9/text = "Power Glove"
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 18.0
@@ -28,5 +20,151 @@ offset_top = 17.0
 offset_right = 90.0
 offset_bottom = 52.0
 text = "Back"
+
+[node name="CoinsLabel" type="Label" parent="."]
+offset_left = 974.0
+offset_top = 13.0
+offset_right = 1038.0
+offset_bottom = 36.0
+text = "Coins: "
+
+[node name="CoinCount" type="Label" parent="."]
+offset_left = 1030.0
+offset_top = 13.0
+offset_right = 1071.0
+offset_bottom = 40.0
+text = "50"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_direction = 2
+anchors_preset = -1
+offset_left = 203.0
+offset_top = 92.0
+offset_right = 912.0
+offset_bottom = 455.0
+scale = Vector2(1.05079, 1.01997)
+columns = 3
+
+[node name="VSplitContainer" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer"]
+layout_mode = 2
+texture = ExtResource("2_wrqbl")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer"]
+layout_mode = 2
+text = "Extra Lives - 20©"
+metadata/value = 5
+
+[node name="VSplitContainer2" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer2"]
+layout_mode = 2
+texture = ExtResource("3_frnbt")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer2"]
+layout_mode = 2
+text = "2X Damage - 20©"
+
+[node name="VSplitContainer3" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer3"]
+layout_mode = 2
+texture = ExtResource("4_2wkw0")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer3"]
+layout_mode = 2
+text = "Health Potion - 5©"
+
+[node name="VSplitContainer4" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer4"]
+layout_mode = 2
+texture = ExtResource("5_4xn86")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer4"]
+layout_mode = 2
+text = "Fairy Dust -10©"
+
+[node name="VSplitContainer5" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer5"]
+layout_mode = 2
+texture = ExtResource("2_wrqbl")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer5"]
+layout_mode = 2
+text = "Titan Armor - 15©"
+
+[node name="VSplitContainer6" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer6"]
+layout_mode = 2
+texture = ExtResource("6_1x8j6")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer6"]
+layout_mode = 2
+text = "Arrows - 2©"
+
+[node name="VSplitContainer7" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer7"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_qdjwu")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer7"]
+layout_mode = 2
+text = "Cursed Rock - 50©"
+
+[node name="VSplitContainer8" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer8"]
+layout_mode = 2
+texture = ExtResource("7_sfdm4")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer8"]
+layout_mode = 2
+text = "Antique Necklace - 30©"
+
+[node name="VSplitContainer9" type="VSplitContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 50
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer9"]
+layout_mode = 2
+texture = ExtResource("8_sujwp")
+
+[node name="Button" type="Button" parent="GridContainer/VSplitContainer9"]
+layout_mode = 2
+text = "Power Glove - 50©"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
