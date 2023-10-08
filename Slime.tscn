@@ -12,7 +12,6 @@ script = ExtResource("1_4u8vm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_4ag72")
 animation = &"Walk"
-autoplay = "Walk"
 
 [node name="ColBox" type="CollisionShape2D" parent="."]
 position = Vector2(14, 22)

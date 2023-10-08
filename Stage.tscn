@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3vlh20cf8cot"]
+[gd_scene load_steps=11 format=3 uid="uid://b3vlh20cf8cot"]
 
 [ext_resource type="TileSet" uid="uid://dbxanaf055els" path="res://Resources/Tilesets/LevelTileset.tres" id="1_b6lcu"]
 [ext_resource type="Script" path="res://Stage.gd" id="1_gdhcu"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c6eysgsodjbhl" path="res://Assets/Audio/tropicalfantasy.ogg" id="5_437g6"]
 [ext_resource type="Script" path="res://EnemyNode.gd" id="5_xvqw6"]
 [ext_resource type="PackedScene" uid="uid://bsr78xo63cxq" path="res://Slime.tscn" id="6_ocr8y"]
+[ext_resource type="PackedScene" uid="uid://b05j1e17iu1uc" path="res://Skeleton.tscn" id="8_t4sgo"]
 
 [sub_resource type="Gradient" id="Gradient_b6022"]
 offsets = PackedFloat32Array(0.0290323, 0.716129)
@@ -95,28 +96,82 @@ script = ExtResource("5_xvqw6")
 position = Vector2(394, 130)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
 
 [node name="Enemy3" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("6_ocr8y")]
 position = Vector2(189, 257)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
 
 [node name="Enemy4" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("6_ocr8y")]
 position = Vector2(681, 376)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
 
 [node name="Enemy2" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("3_k86mq")]
 position = Vector2(644, 161)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
 
 [node name="Enemy5" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("3_k86mq")]
 position = Vector2(225, 518)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
 
 [node name="Enemy6" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("3_k86mq")]
 position = Vector2(484, 537)
 scale = Vector2(0.24, 0.24)
 player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy7" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(244, 95)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy11" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(42, 153)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy12" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(464, 246)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy13" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(578, 229)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy14" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(229, 345)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy8" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(836, 203)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy9" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(1031, 232)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175
+
+[node name="Enemy10" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("8_t4sgo")]
+position = Vector2(891, 368)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+speed = 175

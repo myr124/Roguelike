@@ -17,7 +17,7 @@ var idle_timer = 0
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 var dead = false
-
+@export var enableFlip = false
 func makepath():
 	if player:
 		print("makepath success")
@@ -26,6 +26,10 @@ func _ready():
 	makepath()
 
 func _physics_process(delta):
+	if velocity.x<0 and enableFlip:
+		AnimatedSprite.flip_h = true
+	else:
+		AnimatedSprite.flip_h = false
 	if idle_timer > 0:
 		idle_timer-=delta
 	if !dead:

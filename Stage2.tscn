@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddeng82odot2b"]
+[gd_scene load_steps=11 format=3 uid="uid://ddeng82odot2b"]
 
 [ext_resource type="Script" path="res://Stage.gd" id="1_4d7e7"]
 [ext_resource type="TileSet" uid="uid://dbxanaf055els" path="res://Resources/Tilesets/LevelTileset.tres" id="2_hrh5j"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://c6eysgsodjbhl" path="res://Assets/Audio/tropicalfantasy.ogg" id="4_0cwu5"]
 [ext_resource type="Script" path="res://Stage2Enemy.gd" id="5_qrhhr"]
 [ext_resource type="PackedScene" uid="uid://bsr78xo63cxq" path="res://Slime.tscn" id="6_j5xou"]
+[ext_resource type="PackedScene" uid="uid://b05j1e17iu1uc" path="res://Skeleton.tscn" id="7_bs6qj"]
+[ext_resource type="PackedScene" uid="uid://oacgk4kxk7c8" path="res://Spider.tscn" id="7_rr730"]
 
 [sub_resource type="Gradient" id="Gradient_b6022"]
 offsets = PackedFloat32Array(0.0290323, 0.716129)
@@ -131,3 +133,27 @@ position = Vector2(624, 368)
 scale = Vector2(0.25, 0.25)
 player = NodePath("../../Player")
 speed = 175
+
+[node name="Enemy8" parent="Stage2Enemy" node_paths=PackedStringArray("player") instance=ExtResource("7_bs6qj")]
+position = Vector2(194, 60)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+
+[node name="Enemy9" parent="Stage2Enemy" node_paths=PackedStringArray("player") instance=ExtResource("7_bs6qj")]
+position = Vector2(319, 73)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+
+[node name="Enemy10" parent="Stage2Enemy" node_paths=PackedStringArray("player") instance=ExtResource("7_bs6qj")]
+position = Vector2(438, 140)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+
+[node name="Enemy11" parent="Stage2Enemy" node_paths=PackedStringArray("player") instance=ExtResource("7_bs6qj")]
+position = Vector2(1125, 398)
+scale = Vector2(0.25, 0.25)
+player = NodePath("../../Player")
+
+[node name="Enemy12" parent="Stage2Enemy" instance=ExtResource("7_rr730")]
+position = Vector2(894, 340)
+max_health = 200

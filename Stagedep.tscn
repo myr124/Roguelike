@@ -242,3 +242,6 @@ texture = SubResource("GradientTexture2D_my0ju")
 
 [node name="Player" parent="." instance=ExtResource("4_banvi")]
 position = Vector2(497, 278)
+speed = 250
+health = 100
+dashsp = 100
