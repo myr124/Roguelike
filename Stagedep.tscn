@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://cbpr4i3rt52cq"]
 
-[ext_resource type="Texture2D" uid="uid://o6yxtmy62svg" path="res://pixelbuildings128-v1-downscale-x8-_00078_.png" id="1_uuf7n"]
-[ext_resource type="Texture2D" uid="uid://41socvrkpli4" path="res://lantern.png" id="2_e6bfy"]
 [ext_resource type="Texture2D" uid="uid://cvmythy5vpwyi" path="res://lantern-removebg-preview.png" id="3_lsqqd"]
 [ext_resource type="PackedScene" uid="uid://bsn37suso3s4o" path="res://Player.tscn" id="4_banvi"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1pjal"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_14qug"]
-texture = ExtResource("1_uuf7n")
+texture = SubResource("CompressedTexture2D_1pjal")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -44,8 +44,10 @@ texture = ExtResource("1_uuf7n")
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pune6"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yl1er"]
-texture = ExtResource("2_e6bfy")
+texture = SubResource("CompressedTexture2D_pune6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
