@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://kpawpu382jyk"]
+[gd_scene load_steps=4 format=3 uid="uid://bof7pciwh8mfl"]
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_5lgfl"]
 [ext_resource type="Texture2D" uid="uid://d0fn480rmtydi" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_8fi0m"]
@@ -6,16 +6,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_hccho"]
 radius = 8.0
 
-[node name="projectile" type="Node2D"]
-position = Vector2(0, -1)
+[node name="projectile" type="Area2D"]
+position = Vector2(2, -1)
+rotation = 0.785398
 script = ExtResource("1_5lgfl")
+speed = 700
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-1, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_hccho")
 
-[node name="EggItem" type="Sprite2D" parent="CharacterBody2D"]
+[node name="EggItem" type="Sprite2D" parent="."]
+position = Vector2(-1, 1)
 texture = ExtResource("2_8fi0m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.41421, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

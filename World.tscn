@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cta07a4m6d5el" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="1_ewqew"]
 [ext_resource type="Texture2D" uid="uid://bknx7gpjmaxml" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_qdvmy"]
-[ext_resource type="PackedScene" uid="uid://0vh3othvxrnw" path="res://Player.tscn" id="2_mkvll"]
+[ext_resource type="PackedScene" uid="uid://bsn37suso3s4o" path="res://Player.tscn" id="2_mkvll"]
 [ext_resource type="Texture2D" uid="uid://b4yj8qhk6158o" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_om20q"]
 [ext_resource type="Texture2D" uid="uid://cpqah41bddypd" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="4_cu88f"]
 
