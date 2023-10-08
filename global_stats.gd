@@ -11,7 +11,7 @@ var itemDict = {
 	"Arrows" : [5,"res://assets/StoreArrows.png"],
 	"Cursed Rock" : [30,"res://assets/StoreCurseStone.png"],
 	"Antique Amulet": [25,"res://assets/StoreAmulet.png"],
-	"Power Gauntlet" : [35,"res://assets/StoreAmulet.png"],
+	"Power Gauntlet" : [35,"res://assets/StoreGauntlet.png"],
 	"Quick Crossbow" : [50,"res://assets/StoreCrossbow.png"],
 	"Fiery Greatsword" : [45,"res://assets/StoreFireSword.png"],
 	"Wooden Shield" : [30,"res://assets/StoreShield.png"],
