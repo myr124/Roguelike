@@ -23,37 +23,47 @@ var keys = itemDict.keys()
 var item
 
 func _ready():
+	var VSplit1 = get_node("GridContainer/VSplitContainer")
+	VSplit1.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit2 = get_node("GridContainer/VSplitContainer2")
+	VSplit2.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit3 = get_node("GridContainer/VSplitContainer3")
+	VSplit3.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit4 = get_node("GridContainer/VSplitContainer4")
+	VSplit4.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit5 = get_node("GridContainer/VSplitContainer5")
+	VSplit5.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit6 = get_node("GridContainer/VSplitContainer6")
+	VSplit6.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit7 = get_node("GridContainer/VSplitContainer7")
+	VSplit7.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit8 = get_node("GridContainer/VSplitContainer8")
+	VSplit8.connect("update_currency_label", updateCurrencyLabel)
+	
+	var VSplit9 = get_node("GridContainer/VSplitContainer9")
+	VSplit9.connect("update_currency_label", updateCurrencyLabel)
 	updateCurrencyLabel()
-	item = setItems()
+	
 
 func updateCurrencyLabel():
-	$CoinsLabel.text = "Coins: " + str(GlobalStats.currency)
-
-func buyItem():
-	var item_cost = itemDict[item]
-	
-	if GlobalStats.currency >= item_cost:
-		GlobalStats.currency -= item_cost
-		updateCurrencyLabel()
-		# Update the currency label or perform other actions
-	#else:
-		# Handle the case when the player doesn't have enough currency
+	var label = get_node("CoinsLabel")
+	label.text = "Coins: " + str(GlobalStats.currency)
 
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://main_menu.tscn")
 
 
-func _on_store_button_pressed():
-	buyItem()
-
-func setItems():
-	var firstRandomItem = keys[randi() % keys.size()]
-	$GridContainer/VSplitContainer/StoreButton.text = firstRandomItem + " " + str(itemDict[firstRandomItem]) + "\u00A9"
 	
-	for i in range(2,9):
-		var randomItem = keys[randi() % keys.size()]
-		$GridContainer/VSplitContainer/StoreButton.text = randomItem + " " + str(itemDict[randomItem]) + "\u00A9"
+
+
 	
 	
 
