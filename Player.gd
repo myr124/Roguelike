@@ -5,8 +5,12 @@ class_name PlayerClass
 @export var speed = 250 # How fast the player will move (pixels/sec).
 
 @export var health=100;
+@export var dashsp = 100
+
 
 @onready var Player = $Player
+
+
 var screen_size # Size of the game window.
 var scene = preload("res://projectile.tscn")
 func _ready():
@@ -34,9 +38,7 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("range") and $Player/Timer.is_stopped():
 		proj()
-	if Input.is_action_pressed("melee") and $Player/Timer.is_stopped():
-		$Player/AnimatedSprite2D.animation = "MeleeFor"
-		playMeleeAnim("Melee")
+
 	else:
 		play_directional_animation("Walk")
 #		position += velocity * delta * dodgefac
@@ -90,28 +92,15 @@ func play_directional_animation(anim_name):
 				$Player/AnimatedSprite2D.animation = anim_name+"Back"
 			else:
 				$Player/AnimatedSprite2D.animation = "Idle"
-func playMeleeAnim(anim_name):
-	if Input.is_action_just_released("melee"):
-		if Player.velocity.x > 0:
-			if Player.velocity.y > 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"ForRight"
-			elif Player.velocity.y < 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"BackRight"
-			else:
-				$Player/AnimatedSprite2D.animation = anim_name+"Right"
-		elif Player.velocity.x < 0:
-			if Player.velocity.y > 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"ForLeft"
-			elif Player.velocity.y < 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"BackLeft"
-			else:
-				$Player/AnimatedSprite2D.animation = anim_name+"Left"
-		else:
-			if Player.velocity.y > 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"For"
-			elif Player.velocity.y < 0:
-				$Player/AnimatedSprite2D.animation = anim_name+"Back"
-			else:
-				$Player/AnimatedSprite2D.animation = "MeleeFor"
 
-	
+func attacked(damage):
+	health-=damage
+	if health <= 0:
+		queue_free()
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("enemy"):
+		attacked(10)

@@ -1,30 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://vw72ewhpoefa"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ge8q3"]
-[ext_resource type="Texture2D" uid="uid://cfiy53716cgbp" path="res://fantasylogo-removebg-preview.png" id="2_h25wo"]
 [ext_resource type="Texture2D" uid="uid://d0o3d0323ravy" path="res://skybg.png" id="3_dessu"]
+[ext_resource type="FontFile" uid="uid://dsx7eppbowmkr" path="res://Fonts/MinimalPixel v2.ttf" id="3_trgsk"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ge8q3")
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 575.0
-offset_top = 409.0
-offset_right = 759.0
-offset_bottom = 493.0
+offset_left = 574.0
+offset_top = 441.0
+offset_right = 758.0
+offset_bottom = 525.0
+theme_override_fonts/font = ExtResource("3_trgsk")
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 576.0
-offset_top = 512.0
-offset_right = 759.0
-offset_bottom = 592.0
+offset_left = 574.0
+offset_top = 545.0
+offset_right = 757.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("3_trgsk")
 text = "Quit"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(664, 205)
-scale = Vector2(4.17708, 4.17708)
-texture = ExtResource("2_h25wo")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -35,6 +32,19 @@ position = Vector2(654.25, 369.875)
 scale = Vector2(1.35708, 1.35708)
 texture = ExtResource("3_dessu")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 469.0
+offset_top = 264.0
+offset_right = 883.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("3_trgsk")
+theme_override_font_sizes/font_size = 64
+text = "Rogue Knight"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

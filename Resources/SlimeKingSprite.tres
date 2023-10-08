@@ -1,0 +1,89 @@
+[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://cbwnf7gcp7spl"]
+
+[ext_resource type="Texture2D" uid="uid://n7mo3wjy6ye3" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Death_0.png" id="1_8hk27"]
+[ext_resource type="Texture2D" uid="uid://dn66supaleu5" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Death_1.png" id="2_nuooq"]
+[ext_resource type="Texture2D" uid="uid://c411gk0yoonxs" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Death_2.png" id="3_s0npg"]
+[ext_resource type="Texture2D" uid="uid://biuc0i0xewvxw" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Death_3.png" id="4_45bqh"]
+[ext_resource type="Texture2D" uid="uid://cvlkiesxg1dac" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_0.png" id="5_y8kim"]
+[ext_resource type="Texture2D" uid="uid://bv15d7yvhcxw5" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_1.png" id="6_hita3"]
+[ext_resource type="Texture2D" uid="uid://c644yn38074co" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_2.png" id="7_dh0vq"]
+[ext_resource type="Texture2D" uid="uid://d07yxs84jssfq" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_3.png" id="8_bcbyv"]
+[ext_resource type="Texture2D" uid="uid://gufdncmyxo1e" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_0.png" id="9_i8oeu"]
+[ext_resource type="Texture2D" uid="uid://1rb7x21o3f44" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_1.png" id="10_so4y7"]
+[ext_resource type="Texture2D" uid="uid://cju5j3rwvevml" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_2.png" id="11_n2073"]
+[ext_resource type="Texture2D" uid="uid://d3xh51vqltg3s" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_3.png" id="12_vwrrm"]
+[ext_resource type="Texture2D" uid="uid://cawdxfqsuu64a" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Walk_0.png" id="13_7ctoo"]
+[ext_resource type="Texture2D" uid="uid://cx05w7tq36dyr" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Walk_1.png" id="14_p4mkv"]
+[ext_resource type="Texture2D" uid="uid://c1p313uyushh4" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Walk_2.png" id="15_kfda8"]
+[ext_resource type="Texture2D" uid="uid://i8s64f7ngajj" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Slime King/SlimeKing_Walk_3.png" id="16_qo18k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8hk27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nuooq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s0npg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_45bqh")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y8kim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hita3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dh0vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bcbyv")
+}],
+"loop": true,
+"name": &"Obstacle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i8oeu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_so4y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n2073")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vwrrm")
+}],
+"loop": false,
+"name": &"ObstacleDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_7ctoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_p4mkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kfda8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qo18k")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]

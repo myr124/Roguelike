@@ -1,0 +1,124 @@
+[gd_scene load_steps=20 format=3 uid="uid://b05j1e17iu1uc"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_xrsd6"]
+[ext_resource type="Texture2D" uid="uid://r3bamoywpbph" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Death_0.png" id="2_xmwxd"]
+[ext_resource type="Texture2D" uid="uid://g4e7tp745qma" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Death_1.png" id="3_u4etc"]
+[ext_resource type="Texture2D" uid="uid://cpxgka2nrytg6" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Death_2.png" id="4_kpsrs"]
+[ext_resource type="Texture2D" uid="uid://bl7vkvwnqecg0" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Death_3.png" id="5_ccr32"]
+[ext_resource type="Texture2D" uid="uid://cvlkiesxg1dac" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_0.png" id="6_dkdfc"]
+[ext_resource type="Texture2D" uid="uid://bv15d7yvhcxw5" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_1.png" id="7_88awr"]
+[ext_resource type="Texture2D" uid="uid://c644yn38074co" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_2.png" id="8_ka1oi"]
+[ext_resource type="Texture2D" uid="uid://d07yxs84jssfq" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Obstacle_3.png" id="9_nsksp"]
+[ext_resource type="Texture2D" uid="uid://gufdncmyxo1e" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_0.png" id="10_cxs6k"]
+[ext_resource type="Texture2D" uid="uid://1rb7x21o3f44" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_1.png" id="11_p7lrv"]
+[ext_resource type="Texture2D" uid="uid://cju5j3rwvevml" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_2.png" id="12_ahjgr"]
+[ext_resource type="Texture2D" uid="uid://d3xh51vqltg3s" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Bosses/Skeleton King/SkeletonKing_Ostacle_Death_3.png" id="13_6w4re"]
+[ext_resource type="Texture2D" uid="uid://qlwk0rwl4d78" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Walk_0.png" id="14_w6or0"]
+[ext_resource type="Texture2D" uid="uid://hh3i45t1orxe" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Walk_1.png" id="15_iarrx"]
+[ext_resource type="Texture2D" uid="uid://dd0as7qi0le87" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Walk_2.png" id="16_617nb"]
+[ext_resource type="Texture2D" uid="uid://bv47iqk2jp73" path="res://Assets/Packs/Roguelike Dungeon - Asset Bundle/Sprites/Monsters/Skeleton/Variant0/Skeleton_Walk_3.png" id="17_rds1v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycadl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xmwxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u4etc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kpsrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ccr32")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dkdfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_88awr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ka1oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nsksp")
+}],
+"loop": true,
+"name": &"Obstacle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cxs6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p7lrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ahjgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6w4re")
+}],
+"loop": false,
+"name": &"ObstacleDeath",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_w6or0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_iarrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_617nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rds1v")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unq8b"]
+size = Vector2(39.9375, 73.6563)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_xrsd6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ycadl")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="ColBox" type="CollisionShape2D" parent="."]
+position = Vector2(5, 35)
+shape = SubResource("RectangleShape2D_unq8b")
+debug_color = Color(0.827451, 0.254902, 0.74902, 0.419608)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 95.89
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, 37)
+shape = SubResource("RectangleShape2D_unq8b")
+debug_color = Color(0.827451, 0.254902, 0.74902, 0.419608)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

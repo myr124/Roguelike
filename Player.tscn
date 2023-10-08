@@ -1,9 +1,12 @@
-[gd_scene load_steps=73 format=3 uid="uid://bsn37suso3s4o"]
+[gd_scene load_steps=74 format=3 uid="uid://bsn37suso3s4o"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6jjq1"]
 [ext_resource type="Texture2D" uid="uid://1djf5xh1qoue" path="res://images/Characters/Knight1_Idle.png" id="2_h8o45"]
 [ext_resource type="Texture2D" uid="uid://4ipvtc15x00" path="res://images/Characters/Knight1_Move.png" id="3_3cujq"]
 [ext_resource type="Texture2D" uid="uid://cmqiwpwf101e1" path="res://images/Characters/Knight1_Attack.png" id="3_hc8vi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5pav"]
+size = Vector2(12, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osbe5"]
 atlas = ExtResource("2_h8o45")
@@ -548,11 +551,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5pav"]
-size = Vector2(12, 32)
-
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pnjfq"]
 polygon = PackedVector2Array(-10, 20, -14, -6, -4, -34, -4, -34, 10, -8, 2, 20, 2, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd0vt"]
+size = Vector2(16, 34)
 
 [node name="Player" type="Node2D"]
 position = Vector2(507, 335)
@@ -560,6 +563,10 @@ script = ExtResource("1_6jjq1")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_s5pav")
 
 [node name="HealthBar" type="ProgressBar" parent="Player"]
 offset_left = -50.0
@@ -576,12 +583,8 @@ scale = Vector2(2.8125, 3.22917)
 sprite_frames = SubResource("SpriteFrames_84mtl")
 animation = &"Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_s5pav")
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="Timer" type="Timer" parent="Player"]
 wait_time = 0.411
@@ -589,3 +592,11 @@ one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Player"]
 occluder = SubResource("OccluderPolygon2D_pnjfq")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_dd0vt")
+
+[connection signal="body_entered" from="Player/Area2D" to="." method="_on_area_2d_body_entered"]
