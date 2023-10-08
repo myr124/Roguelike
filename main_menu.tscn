@@ -8,21 +8,21 @@
 script = ExtResource("1_ge8q3")
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 483.0
-offset_top = 401.0
-offset_right = 667.0
-offset_bottom = 485.0
+offset_left = 575.0
+offset_top = 409.0
+offset_right = 759.0
+offset_bottom = 493.0
 text = "Start Game"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 481.0
-offset_top = 508.0
-offset_right = 664.0
-offset_bottom = 588.0
+offset_left = 576.0
+offset_top = 512.0
+offset_right = 759.0
+offset_bottom = 592.0
 text = "Quit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(575, 204)
+position = Vector2(664, 205)
 scale = Vector2(4.17708, 4.17708)
 texture = ExtResource("2_h25wo")
 
@@ -31,9 +31,10 @@ texture = ExtResource("2_h25wo")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Skybg" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(599.971, 330.75)
-scale = Vector2(1.30239, 1.30239)
+position = Vector2(654.25, 369.875)
+scale = Vector2(1.35708, 1.35708)
 texture = ExtResource("3_dessu")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

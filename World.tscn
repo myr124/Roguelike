@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckyiybv0ilbvy"]
+[gd_scene load_steps=11 format=3 uid="uid://dknpl4t4bqcly"]
 
-[ext_resource type="Texture2D" uid="uid://cta07a4m6d5el" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="1_ewqew"]
-[ext_resource type="Texture2D" uid="uid://bknx7gpjmaxml" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_qdvmy"]
 [ext_resource type="PackedScene" uid="uid://bsn37suso3s4o" path="res://Player.tscn" id="2_mkvll"]
-[ext_resource type="Texture2D" uid="uid://b4yj8qhk6158o" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_om20q"]
-[ext_resource type="Texture2D" uid="uid://cpqah41bddypd" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="4_cu88f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ap2nk"]
+load_path = "res://.godot/imported/Hills.png-7836d8bceeb1ea4ffb3678065ca3ecdf.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t14sf"]
-texture = ExtResource("1_ewqew")
+texture = SubResource("CompressedTexture2D_ap2nk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -45,8 +44,11 @@ texture = ExtResource("1_ewqew")
 4:5/0 = 0
 5:5/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iggp2"]
+load_path = "res://.godot/imported/Grass.png-9471cfd9941c76549d260ff73d519620.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_62qy8"]
-texture = ExtResource("1_qdvmy")
+texture = SubResource("CompressedTexture2D_iggp2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -119,8 +121,11 @@ texture = ExtResource("1_qdvmy")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2j5li"]
+load_path = "res://.godot/imported/Fences.png-56759b1dede644b9211778dfdb3c424f.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnqkl"]
-texture = ExtResource("3_om20q")
+texture = SubResource("CompressedTexture2D_2j5li")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -138,8 +143,11 @@ texture = ExtResource("3_om20q")
 2:3/0 = 0
 3:3/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_myevh"]
+load_path = "res://.godot/imported/Wooden House.png-69985ada1533ef9cffcfec7d2536f996.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dbdc2"]
-texture = ExtResource("4_cu88f")
+texture = SubResource("CompressedTexture2D_myevh")
 1:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0

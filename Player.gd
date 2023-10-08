@@ -1,6 +1,8 @@
 extends Node2D
 
-@export var speed = 50 # How fast the player will move (pixels/sec).
+class_name PlayerClass
+
+@export var speed = 250 # How fast the player will move (pixels/sec).
 
 @export var health=100;
 
@@ -13,7 +15,7 @@ func _ready():
 func _process(delta):
 	$Player/HealthBar.value = health
 #	var velocity = Vector2.ZERO # The player's movement vector.
-	speed = 400
+
 	Player.velocity = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		Player.velocity.x += 1
@@ -23,35 +25,40 @@ func _process(delta):
 		Player.velocity.y += 1
 	if Input.is_action_pressed("up"):
 		Player.velocity.y -= 1
-	if Input.is_action_pressed("sprint"):
-		speed *= 1.5
-	if Input.is_action_just_pressed("attack") and $Player/Timer.is_stopped():
-		proj()
+	
 	if Player.velocity.length() > 0:
 		Player.velocity = Player.velocity.normalized() * speed
 		$Player/AnimatedSprite2D.play()
 	else:
 		$Player/AnimatedSprite2D.stop()
 	
-
+	if Input.is_action_just_pressed("range") and $Player/Timer.is_stopped():
+		proj()
+	if Input.is_action_pressed("melee") and $Player/Timer.is_stopped():
+		$Player/AnimatedSprite2D.animation = "MeleeFor"
+		playMeleeAnim("Melee")
+	else:
+		play_directional_animation("Walk")
 #		position += velocity * delta * dodgefac
 	Player.move_and_slide()
 #	position += velocity * 
 #	move_and_slide
 
 
-	if Player.velocity.x > 0:
-		$Player/AnimatedSprite2D.animation = "WalkRight"
-		if Player.velocity.y > 0:
-			$Player/AnimatedSprite2D.animation = "WalkRight"
-	elif Player.velocity.y<0:
-		$Player/AnimatedSprite2D.animation = "WalkBack"
-	elif Player.velocity.x<0:
-		$Player/AnimatedSprite2D.animation = "WalkLeft"
-	if Player.velocity.y > 0:
-		$Player/AnimatedSprite2D.animation = "WalkFor"
-	elif Player.velocity.y<0:
-		$Player/AnimatedSprite2D.animation = "WalkBack"
+#	if Player.velocity.x > 0:
+#		if Player.velocity.y > 0:
+#			$Player/AnimatedSprite2D.animation = "WalkForRight"
+#		else:
+#			$Player/AnimatedSprite2D.animation = "WalkRight"
+#	elif Player.velocity.x<0:
+#		$Player/AnimatedSprite2D.animation = "WalkLeft"
+#	if Player.velocity.y > 0:
+#		$Player/AnimatedSprite2D.animation = "WalkFor"
+#	elif Player.velocity.y<0:
+#		$Player/AnimatedSprite2D.animation = "WalkBack"
+	
+		
+		
 
 func proj():
 	var inst = scene.instantiate()
@@ -61,7 +68,50 @@ func proj():
 	inst.rotation = proj_rot
 
 
-
-
+func play_directional_animation(anim_name):
+		if Player.velocity.x > 0:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"ForRight"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"BackRight"
+			else:
+				$Player/AnimatedSprite2D.animation = anim_name+"Right"
+		elif Player.velocity.x < 0:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"ForLeft"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"BackLeft"
+			else:
+				$Player/AnimatedSprite2D.animation = anim_name+"Left"
+		else:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"For"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"Back"
+			else:
+				$Player/AnimatedSprite2D.animation = "Idle"
+func playMeleeAnim(anim_name):
+	if Input.is_action_just_released("melee"):
+		if Player.velocity.x > 0:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"ForRight"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"BackRight"
+			else:
+				$Player/AnimatedSprite2D.animation = anim_name+"Right"
+		elif Player.velocity.x < 0:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"ForLeft"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"BackLeft"
+			else:
+				$Player/AnimatedSprite2D.animation = anim_name+"Left"
+		else:
+			if Player.velocity.y > 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"For"
+			elif Player.velocity.y < 0:
+				$Player/AnimatedSprite2D.animation = anim_name+"Back"
+			else:
+				$Player/AnimatedSprite2D.animation = "MeleeFor"
 
 	

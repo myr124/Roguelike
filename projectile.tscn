@@ -1,26 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://bof7pciwh8mfl"]
+[gd_scene load_steps=10 format=3 uid="uid://bof7pciwh8mfl"]
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_5lgfl"]
-[ext_resource type="Texture2D" uid="uid://d0fn480rmtydi" path="res://Sprout Lands - Sprites - Basic pack/Objects/Egg item.png" id="2_8fi0m"]
+[ext_resource type="Texture2D" uid="uid://ddulb0akg40ek" path="res://Assets/Projectiles/Fire Effect and Bullet 16x16.png" id="2_7ge52"]
+[ext_resource type="AudioStream" uid="uid://bnfjqrmbxlj5j" path="res://Assets/8-bit-fireball-81148.mp3" id="3_0os12"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hccho"]
-radius = 8.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyn6c"]
+atlas = ExtResource("2_7ge52")
+region = Rect2(224, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqkkp"]
+atlas = ExtResource("2_7ge52")
+region = Rect2(240, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrtuw"]
+atlas = ExtResource("2_7ge52")
+region = Rect2(256, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyuoy"]
+atlas = ExtResource("2_7ge52")
+region = Rect2(272, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4a74l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyn6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqkkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrtuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyuoy")
+}],
+"loop": true,
+"name": &"projectile",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6118f"]
+height = 42.4032
 
 [node name="projectile" type="Area2D"]
 position = Vector2(2, -1)
-rotation = 0.785398
+rotation = -4.70192
 script = ExtResource("1_5lgfl")
-speed = 700
+speed = 400
+
+[node name="FireBall" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.79588, -6.4509)
+rotation = 4.66323
+scale = Vector2(2.23822, 2.61391)
+sprite_frames = SubResource("SpriteFrames_4a74l")
+animation = &"projectile"
+autoplay = "projectile"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 2)
-shape = SubResource("CircleShape2D_hccho")
-
-[node name="EggItem" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-texture = ExtResource("2_8fi0m")
+position = Vector2(-4.09403, -8.95762)
+rotation = -4.73858
+shape = SubResource("CapsuleShape2D_6118f")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-1.41421, 0)
+position = Vector2(-5.01841, -9.94609)
+scale = Vector2(1.78138, 1.18659)
 
+[node name="Firesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0os12")
+volume_db = -11.692
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
