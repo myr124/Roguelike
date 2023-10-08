@@ -37,9 +37,8 @@ func _physics_process(delta):
 			move_and_collide(move_direction * speed)
 	else:
 		move_and_collide(move_direction * speed)
-			
-	if(move_and_collide(move_direction * speed)):
-		move_and_collide(move_direction * -1 * speed)
+
+
 
 
 func choose_new_direction():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqpe3djkaf46g"]
+[gd_scene load_steps=20 format=3 uid="uid://dqpe3djkaf46g"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyMovement.gd" id="1_8sy86"]
 [ext_resource type="Texture2D" uid="uid://bohykjynnqs6p" path="res://Enemies/Sprites/zombieKnight.png" id="2_cbslc"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Player.gd" id="4_2edir"]
 [ext_resource type="Texture2D" uid="uid://dnl8ghsc8q221" path="res://Sprout Lands - Sprites - Basic pack 2/Characters/Basic Charakter Spritesheet.png" id="5_ve4mk"]
 [ext_resource type="Texture2D" uid="uid://co03g8rk58v8k" path="res://ObjectSprites/Chest.png" id="6_jaaq3"]
-[ext_resource type="Script" path="res://Enemies/EnemySpawn.gd" id="7_ad3cg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0rgb"]
 texture_region_size = Vector2i(160, 160)
@@ -119,7 +118,7 @@ speed = 1
 scale = Vector2(2.83333, 3.25)
 sprite_frames = SubResource("SpriteFrames_787ib")
 animation = &"EnemyIdle"
-frame_progress = 0.884868
+frame_progress = 0.715231
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basic Enemy"]
 position = Vector2(2, -1)
@@ -191,7 +190,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_56cbo")
 
 [node name="Map" type="Area2D" parent="."]
-script = ExtResource("7_ad3cg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map"]
 position = Vector2(1.5, -2)
