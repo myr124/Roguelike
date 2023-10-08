@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqpe3djkaf46g"]
+[gd_scene load_steps=21 format=3 uid="uid://dqpe3djkaf46g"]
 
 [ext_resource type="Script" path="res://Enemies/EnemyMovement.gd" id="1_8sy86"]
 [ext_resource type="Texture2D" uid="uid://bohykjynnqs6p" path="res://Enemies/Sprites/zombieKnight.png" id="2_cbslc"]
@@ -6,12 +6,14 @@
 [ext_resource type="Script" path="res://Player.gd" id="4_2edir"]
 [ext_resource type="Texture2D" uid="uid://dnl8ghsc8q221" path="res://Sprout Lands - Sprites - Basic pack 2/Characters/Basic Charakter Spritesheet.png" id="5_ve4mk"]
 [ext_resource type="Texture2D" uid="uid://co03g8rk58v8k" path="res://ObjectSprites/Chest.png" id="6_jaaq3"]
+[ext_resource type="Script" path="res://Enemies/EnemySpawn.gd" id="7_ad3cg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0rgb"]
+texture_region_size = Vector2i(160, 160)
 
 [sub_resource type="TileSet" id="TileSet_j308l"]
 tile_size = Vector2i(160, 160)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohjto"]
-size = Vector2(1021, 1027)
+sources/0 = SubResource("TileSetAtlasSource_f0rgb")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7f043"]
 region = Rect2(0, 0, 48, 48)
@@ -74,6 +76,12 @@ size = Vector2(80, 115)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrckl"]
 size = Vector2(68, 51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56cbo"]
+size = Vector2(17, 1038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abeek"]
+size = Vector2(993, 992)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -86,10 +94,6 @@ format = 2
 [node name="Sprite2D" type="Sprite2D" parent="TileMap"]
 position = Vector2(0, -1)
 texture = ExtResource("3_25mp3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap"]
-position = Vector2(-2, -1)
-shape = SubResource("RectangleShape2D_ohjto")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 top_level = true
@@ -115,7 +119,7 @@ speed = 1
 scale = Vector2(2.83333, 3.25)
 sprite_frames = SubResource("SpriteFrames_787ib")
 animation = &"EnemyIdle"
-frame_progress = 0.421651
+frame_progress = 0.884868
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basic Enemy"]
 position = Vector2(2, -1)
@@ -125,9 +129,6 @@ shape = SubResource("RectangleShape2D_3h1em")
 texture = ExtResource("2_cbslc")
 
 [node name="RayCast2D" type="RayCast2D" parent="Basic Enemy"]
-
-[node name="Timer" type="Timer" parent="Basic Enemy"]
-wait_time = 0.1
 
 [node name="Chest" type="RigidBody2D" parent="."]
 position = Vector2(207, -243)
@@ -167,3 +168,33 @@ texture = ExtResource("6_jaaq3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chest3"]
 position = Vector2(3, -1.5)
 shape = SubResource("RectangleShape2D_xrckl")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+disable_mode = 1
+
+[node name="Wall1" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-507.5, -4)
+shape = SubResource("RectangleShape2D_56cbo")
+
+[node name="Wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(506, 2)
+shape = SubResource("RectangleShape2D_56cbo")
+
+[node name="Wall3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(4, 504)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_56cbo")
+
+[node name="Wall4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-3, -506)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_56cbo")
+
+[node name="Map" type="Area2D" parent="."]
+script = ExtResource("7_ad3cg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map"]
+position = Vector2(1.5, -2)
+shape = SubResource("RectangleShape2D_abeek")
+
+[node name="Timer" type="Timer" parent="."]

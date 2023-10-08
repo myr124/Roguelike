@@ -4,20 +4,23 @@ extends CharacterBody2D
 @export var speed = 50
 var player_position
 var target_position
-var direction
 @onready var player = get_parent().get_node("Player")
-# Direction timer
+
+var move_timer = 0.0
+var move_interval = 0.0
+var move_direction = Vector2.ZERO
 var rng = RandomNumberGenerator.new()
-var timer = 0
 
 func _ready():
-	rng.randomize()
-	direction = Vector2(1,1)
-
-
+	choose_new_direction()
 
 
 func _physics_process(delta):
+	move_timer -= delta
+	
+	if move_timer <= 0:
+		choose_new_direction()
+	
 	var space_state = get_world_2d().direct_space_state
 	
 	player_position = player.position
@@ -27,31 +30,19 @@ func _physics_process(delta):
 	var query = PhysicsRayQueryParameters2D.create(position, player_position)
 	var result = space_state.intersect_ray(query)
 	
-	if position.distance_to(player_position) > 1 and result.has("collider"):
+	if position.distance_to(player_position) < 500 and result.has("collider"):
 		if result.collider == player:
 			move_and_collide(target_position * speed)
-		elif(direction != null):
-			move_and_collide(direction * speed)
-			
-		#if the enemy collides with other objects, turn them around and re-randomize the timer countdown
-		elif(result.collider != player):
-			#direction rotation
-			direction = direction.rotated(rng.randf_range(PI/4, PI/2))
-			#timer countdown random range
-			timer = rng.randf_range(2, 5)
-		#if they collide with the player 
-		#trigger the timer's timeout() so that they can chase/move towards our player
 		else:
-			timer = 0
+			move_and_collide(move_direction * speed)
+	else:
+		move_and_collide(move_direction * speed)
+			
+	if(move_and_collide(move_direction * speed)):
+		move_and_collide(move_direction * -1 * speed)
 
 
-func on_timer_timeout():
-	#this will generate a random direction value
-	var random_direction = rng.randf()
-	#This direction is obtained by rotating Vector2.DOWN by a random angle.
-	if random_direction < 0.05:
-		#enemy stops
-		direction = Vector2.ZERO
-	elif random_direction < 0.1:
-		#enemy moves
-		direction = Vector2.DOWN.rotated(rng.randf() * 2 * PI)
+func choose_new_direction():
+	move_interval = rng.randi_range(5, 8)
+	move_timer = move_interval
+	move_direction = Vector2(randf_range(-10,10), randf_range(-10,10)).normalized()
