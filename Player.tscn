@@ -1,12 +1,18 @@
-[gd_scene load_steps=74 format=3 uid="uid://bsn37suso3s4o"]
+[gd_scene load_steps=76 format=3 uid="uid://bsn37suso3s4o"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_6jjq1"]
 [ext_resource type="Texture2D" uid="uid://1djf5xh1qoue" path="res://images/Characters/Knight1_Idle.png" id="2_h8o45"]
+[ext_resource type="Shader" path="res://Player.gdshader" id="2_jco55"]
 [ext_resource type="Texture2D" uid="uid://4ipvtc15x00" path="res://images/Characters/Knight1_Move.png" id="3_3cujq"]
 [ext_resource type="Texture2D" uid="uid://cmqiwpwf101e1" path="res://images/Characters/Knight1_Attack.png" id="3_hc8vi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5pav"]
 size = Vector2(12, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnr2n"]
+shader = ExtResource("2_jco55")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osbe5"]
 atlas = ExtResource("2_h8o45")
@@ -577,6 +583,7 @@ fill_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+material = SubResource("ShaderMaterial_hnr2n")
 position = Vector2(-4, -8)
 rotation = 0.00794821
 scale = Vector2(2.8125, 3.22917)
@@ -598,5 +605,8 @@ occluder = SubResource("OccluderPolygon2D_pnjfq")
 [node name="Hitbox" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2(-2, 1)
 shape = SubResource("RectangleShape2D_dd0vt")
+
+[node name="PlayerTime" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="Player/Area2D" to="." method="_on_area_2d_body_entered"]

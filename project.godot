@@ -15,6 +15,7 @@ config/description="A free, fun, roguelike about a cool knight dude"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://gameicon.png"
+config/windows_native_icon="res://gameicon.ico"
 
 [display]
 
