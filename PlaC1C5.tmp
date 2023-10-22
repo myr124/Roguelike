@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://0vh3othvxrnw"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_6jjq1"]
+[ext_resource type="Texture2D" uid="uid://ddamflf4vpj2j" path="res://Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_pbt1k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f043"]
+atlas = ExtResource("2_pbt1k")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esehk"]
+atlas = ExtResource("2_pbt1k")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0aql8"]
+atlas = ExtResource("2_pbt1k")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pet0l"]
+atlas = ExtResource("2_pbt1k")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3wru"]
+atlas = ExtResource("2_pbt1k")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84mtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f043")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esehk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0aql8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pet0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3wru")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5pav"]
+size = Vector2(39, 52)
+
+[node name="Player" type="Node2D"]
+position = Vector2(527, 326)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_6jjq1")
+speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(2.83333, 3.25)
+sprite_frames = SubResource("SpriteFrames_84mtl")
+animation = &"Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_s5pav")
