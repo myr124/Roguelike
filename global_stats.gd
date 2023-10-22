@@ -1,6 +1,6 @@
 extends Node
 
-var currency : int = 50
+var currency : int = 100
 
 var itemDict = {
 	"Extra lives" : [20, "res://assets/StoreExtraLives.png"],
