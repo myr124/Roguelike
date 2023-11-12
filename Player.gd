@@ -5,8 +5,8 @@ class_name PlayerClass
 @export var speed = 250 # How fast the player will move (pixels/sec).
 
 @export var health=100;
-@export var dashsp = 100
-
+@export var dashsp = 2.5
+@export var dashing = false
 
 @onready var Player = $Player
 
@@ -42,6 +42,7 @@ func _process(delta):
 	else:
 		play_directional_animation("Walk")
 #		position += velocity * delta * dodgefac
+	dash()
 	Player.move_and_slide()
 #	position += velocity * 
 #	move_and_slide
@@ -93,6 +94,19 @@ func play_directional_animation(anim_name):
 			else:
 				$Player/AnimatedSprite2D.animation = "Idle"
 
+func dash():
+	var dashcount = 0;
+	if Input.is_action_pressed("dodge") && dashcount==0:
+		dashcount+=1
+		if dashing ==false:
+			print("Hello")
+			Player.velocity*=dashsp
+			await get_tree().create_timer(0.2).timeout
+			dashing=true
+			await get_tree().create_timer(0.2).timeout
+			dashing=false 
+			
+		
 func attacked(damage):
 	health-=damage
 	if health <= 0:
