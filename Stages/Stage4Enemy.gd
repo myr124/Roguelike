@@ -8,5 +8,5 @@ func _ready():
 func _process(delta):
 	print(get_child_count())
 	if get_child_count()==0:
-		get_tree().change_scene_to_file("res://Stage5.tscn")
+		get_tree().change_scene_to_file("res://Stages/Stage5.tscn")
 	

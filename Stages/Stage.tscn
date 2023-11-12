@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://b3vlh20cf8cot"]
 
 [ext_resource type="TileSet" uid="uid://dbxanaf055els" path="res://Resources/Tilesets/LevelTileset.tres" id="1_b6lcu"]
-[ext_resource type="Script" path="res://Stage.gd" id="1_gdhcu"]
+[ext_resource type="Script" path="res://Stages/Stage.gd" id="1_gdhcu"]
 [ext_resource type="PackedScene" uid="uid://oacgk4kxk7c8" path="res://Spider.tscn" id="3_k86mq"]
 [ext_resource type="PackedScene" uid="uid://bsn37suso3s4o" path="res://Player.tscn" id="4_banvi"]
 [ext_resource type="AudioStream" uid="uid://c6eysgsodjbhl" path="res://Assets/Audio/tropicalfantasy.ogg" id="5_437g6"]
-[ext_resource type="Script" path="res://EnemyNode.gd" id="5_xvqw6"]
+[ext_resource type="Script" path="res://Stages/EnemyNode.gd" id="5_kswf6"]
 [ext_resource type="PackedScene" uid="uid://bsr78xo63cxq" path="res://Slime.tscn" id="6_ocr8y"]
 [ext_resource type="PackedScene" uid="uid://b05j1e17iu1uc" path="res://Skeleton.tscn" id="8_t4sgo"]
 
@@ -90,7 +90,7 @@ shadow_color = Color(0, 0, 0, 0.603922)
 texture = SubResource("GradientTexture2D_kmcva")
 
 [node name="EnemyNode" type="Node2D" parent="."]
-script = ExtResource("5_xvqw6")
+script = ExtResource("5_kswf6")
 
 [node name="Enemy" parent="EnemyNode" node_paths=PackedStringArray("player") instance=ExtResource("6_ocr8y")]
 position = Vector2(394, 130)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://drncec4r6xync"]
 
-[ext_resource type="Script" path="res://Stage.gd" id="1_eii8i"]
+[ext_resource type="Script" path="res://Stages/Stage.gd" id="1_eii8i"]
 [ext_resource type="TileSet" uid="uid://dbxanaf055els" path="res://Resources/Tilesets/LevelTileset.tres" id="2_2obsa"]
 [ext_resource type="PackedScene" uid="uid://bsn37suso3s4o" path="res://Player.tscn" id="3_ygh55"]
 [ext_resource type="AudioStream" uid="uid://c6eysgsodjbhl" path="res://Assets/Audio/tropicalfantasy.ogg" id="4_j56l6"]
-[ext_resource type="Script" path="res://Stage3Enemy.gd" id="5_w47li"]
+[ext_resource type="Script" path="res://Stages/Stage3Enemy.gd" id="5_w47li"]
 [ext_resource type="PackedScene" uid="uid://bsr78xo63cxq" path="res://Slime.tscn" id="6_1e4xt"]
 [ext_resource type="PackedScene" uid="uid://oacgk4kxk7c8" path="res://Spider.tscn" id="7_t77om"]
 
