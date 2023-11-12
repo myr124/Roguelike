@@ -7,7 +7,6 @@
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_ge8q3")
 
-
 [node name="StoreButton" type="Button" parent="."]
 offset_left = 29.0
 offset_top = 26.0
@@ -56,9 +55,6 @@ text = "Rogue Knight"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
-
 [connection signal="pressed" from="StoreButton" to="." method="_on_store_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
