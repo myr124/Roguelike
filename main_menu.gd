@@ -3,7 +3,7 @@ extends Node2D
 var currency = 50
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Stages/Stage.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Stages/Stage.tscn")
 
 
 func _on_quit_button_pressed():
@@ -11,4 +11,4 @@ func _on_quit_button_pressed():
 
 
 func _on_store_button_pressed():
-	get_tree().change_scene_to_file("res://Store.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Store/Store.tscn")

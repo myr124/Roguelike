@@ -1,19 +1,19 @@
 [gd_scene load_steps=23 format=3 uid="uid://bwyh4h8knfljn"]
 
-[ext_resource type="Script" path="res://Store.gd" id="1_pjmtu"]
-[ext_resource type="Script" path="res://VSplitContainer.gd" id="2_8eitj"]
-[ext_resource type="Script" path="res://VSplitContainer2.gd" id="4_6ae84"]
-[ext_resource type="Script" path="res://VSplitContainer3.gd" id="6_c445s"]
-[ext_resource type="Script" path="res://VSplitContainer4.gd" id="8_t71oy"]
-[ext_resource type="Script" path="res://VSplitContainer5.gd" id="10_17mrp"]
-[ext_resource type="Texture2D" uid="uid://bp4g4t68jcpjl" path="res://assets/Dungeon_Tileset.png" id="11_be740"]
-[ext_resource type="Script" path="res://VSplitContainer6.gd" id="11_d4oqa"]
-[ext_resource type="Script" path="res://VSplitContainer7.gd" id="13_3yuai"]
-[ext_resource type="Script" path="res://VSplitContainer8.gd" id="14_77iiy"]
-[ext_resource type="Script" path="res://VSplitContainer9.gd" id="16_8yd1p"]
+[ext_resource type="Script" path="res://Scenes/Store/Store.gd" id="1_lou8f"]
+[ext_resource type="Texture2D" uid="uid://bp4g4t68jcpjl" path="res://assets/Dungeon_Tileset.png" id="2_uoly2"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer.gd" id="3_lf3u4"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer2.gd" id="4_dmdu0"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer3.gd" id="5_cn8te"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer4.gd" id="6_2f01o"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer5.gd" id="7_qw3i0"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer6.gd" id="8_4ugcm"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer7.gd" id="9_kw0bj"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer8.gd" id="10_0f7c8"]
+[ext_resource type="Script" path="res://Scenes/Store/VSplitContainer9.gd" id="11_lxmil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bs8fe"]
-texture = ExtResource("11_be740")
+texture = ExtResource("2_uoly2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -122,30 +122,23 @@ sources/3 = SubResource("TileSetAtlasSource_bs8fe")
 font_size = 24
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dm4wj"]
-load_path = "res://.godot/imported/Egg item.png-a8b34979e4f903d10bafc3e6def01156.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_78b4q"]
-load_path = "res://.godot/imported/Basic tools and meterials.png-c6a519ab5262433b5d1e74cbfc2cfb07.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s6u7b"]
-load_path = "res://.godot/imported/Wood Bridge.png-47127563427b88151ccd90b1f78bf804.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d5g2y"]
-load_path = "res://.godot/imported/Free_Chicken_House.png-c6da0ed8b8ba95219cfeb9c5f4645dff.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_snps8"]
-load_path = "res://.godot/imported/Simple Milk and grass item.png-5ded40fbf17ea499edbaaf4378c6ffb1.ctex"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qdjwu"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xsy2y"]
-load_path = "res://.godot/imported/Egg_And_Nest.png-53876f267c22d4a95be84054499c35f9.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ht4lx"]
-load_path = "res://.godot/imported/Basic Plants.png-3a51ac930872a119228d0c6ef9491e17.ctex"
 
 [node name="Store" type="Node2D"]
-script = ExtResource("1_pjmtu")
+script = ExtResource("1_lou8f")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_77tpg")
@@ -182,7 +175,7 @@ columns = 3
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("2_8eitj")
+script = ExtResource("3_lf3u4")
 
 [node name="TextureRect" type="TextureRect" parent="GridContainer/VSplitContainer"]
 layout_mode = 2
@@ -197,7 +190,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 split_offset = 50
-script = ExtResource("4_6ae84")
+script = ExtResource("4_dmdu0")
 
 [node name="TextureRect2" type="TextureRect" parent="GridContainer/VSplitContainer2"]
 layout_mode = 2
@@ -211,7 +204,7 @@ text = "Extra Lives - 20©"
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("6_c445s")
+script = ExtResource("5_cn8te")
 
 [node name="TextureRect3" type="TextureRect" parent="GridContainer/VSplitContainer3"]
 layout_mode = 2
@@ -225,7 +218,7 @@ text = "Extra Lives - 20©"
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("8_t71oy")
+script = ExtResource("6_2f01o")
 
 [node name="TextureRect4" type="TextureRect" parent="GridContainer/VSplitContainer4"]
 layout_mode = 2
@@ -239,7 +232,7 @@ text = "Extra Lives - 20©"
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("10_17mrp")
+script = ExtResource("7_qw3i0")
 
 [node name="TextureRect5" type="TextureRect" parent="GridContainer/VSplitContainer5"]
 layout_mode = 2
@@ -254,7 +247,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 split_offset = 50
-script = ExtResource("11_d4oqa")
+script = ExtResource("8_4ugcm")
 
 [node name="TextureRect6" type="TextureRect" parent="GridContainer/VSplitContainer6"]
 layout_mode = 2
@@ -268,7 +261,7 @@ text = "Extra Lives - 20©"
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("13_3yuai")
+script = ExtResource("9_kw0bj")
 
 [node name="TextureRect7" type="TextureRect" parent="GridContainer/VSplitContainer7"]
 layout_mode = 2
@@ -283,7 +276,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 split_offset = 50
-script = ExtResource("14_77iiy")
+script = ExtResource("10_0f7c8")
 
 [node name="TextureRect8" type="TextureRect" parent="GridContainer/VSplitContainer8"]
 layout_mode = 2
@@ -297,7 +290,7 @@ text = "Extra Lives - 20©"
 layout_mode = 2
 size_flags_horizontal = 3
 split_offset = 50
-script = ExtResource("16_8yd1p")
+script = ExtResource("11_lxmil")
 
 [node name="TextureRect9" type="TextureRect" parent="GridContainer/VSplitContainer9"]
 layout_mode = 2
